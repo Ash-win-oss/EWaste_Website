@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <%= link_to root_path, class: "brand" do %>
+      <span class="brand-mark">E-</span>Waste Awareness
+    <% end %>
+
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <%= nav_link "Home", root_path %>
+      <%= nav_link "The Issue", issue_path %>
+      <%= nav_link "Solutions", solutions_path %>
+      <%= nav_link "Government", government_path %>
+      <%= link_to instagram_icon + content_tag(:span, "Instagram"), ApplicationHelper::INSTAGRAM_URL,
+                  class: "nav-link nav-social", target: "_blank", rel: "noopener noreferrer",
+                  "aria-label": "Instagram, opens in a new tab" %>
+    </nav>
+  </div>
+</header>

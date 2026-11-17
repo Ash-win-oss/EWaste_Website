@@ -1,0 +1,84 @@
+<% content_for :title, "The Issue" %>
+
+<section class="page-header">
+  <div class="container">
+    <h1>What is the issue?</h1>
+    <p><strong>E-waste</strong> is any discarded electrical or electronic equipment, from broken smartphones to washing machines and microwaves. It is the world's fastest-growing waste stream.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title">Why it matters</h2>
+    <p>E-waste is extremely harmful to the environment. It spews toxic poisons into the air and soil and wastes billions of dollars in rare metals. The vast majority of devices contain harmful metals and chemicals. When these items end up in landfills, their toxins leach into the soil and can contaminate groundwater.</p>
+
+    <div class="card-grid two">
+      <% @metals.each do |metal| %>
+        <article class="card">
+          <h3><%= metal[:name] %></h3>
+          <p><%= metal[:harm] %></p>
+        </article>
+      <% end %>
+    </div>
+
+    <h2 class="section-title">The human cost</h2>
+    <p>Most e-waste is exported to developing countries, where workers, many of whom are children, are forced to work in hazardous conditions. They break down devices by hand with sharp objects, or use acid baths and large fires to extract precious metals. This work releases toxic chemicals that are extremely harmful to humans and local ecosystems.</p>
+
+    <div class="callout">
+      <strong>Only around 22.3% of e-waste is safely recycled.</strong>
+      That means billions of dollars worth of gold, silver, copper, lithium and more are lost each year.
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container narrow">
+    <h2 class="section-title">Where it's happening</h2>
+    <p><strong>China</strong> produces the most e-waste, around 12 million tonnes a year, followed by the United States. However, <strong>richer countries throw out more electronics per person</strong>, with Norway and the United States generating over 20 kg per person every year.</p>
+    <%= image_tag "ewaste-map.png", alt: "World map of e-waste generated per person in 2022, with Norway at 26.8 kg, the UK at 24.5 kg, the US at 21.3 kg, China at 8.5 kg, India at 1.9 kg and Burundi at 0.6 kg.", class: "rounded shadow" %>
+    <p class="caption">E-waste generated, kg per person (2022).</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title">Why it keeps growing</h2>
+    <div class="card-grid three">
+      <article class="card">
+        <h3>Short lifespans</h3>
+        <p>Companies like Apple constantly release new phone models and stop providing updates on older ones, forcing consumers to upgrade more often.</p>
+      </article>
+      <article class="card">
+        <h3>Repair costs</h3>
+        <p>Nowadays, repairing a device is often more expensive than buying a new one.</p>
+      </article>
+      <article class="card">
+        <h3>Reliance on technology</h3>
+        <p>Items like toothbrushes and lightbulbs now contain electronics.</p>
+      </article>
+    </div>
+    <div class="callout">
+      As a result, <strong>e-waste generation is rising 5 times faster than e-waste recycling.</strong>
+    </div>
+
+    <h2 class="section-title">E-waste over time</h2>
+    <div class="bars" role="img" aria-label="Bar chart of e-waste in million tonnes: 33.8 in 2010, 65 in 2025, 82 projected in 2030">
+      <% @timeline.each do |row| %>
+        <div class="bar-row">
+          <span class="bar-label"><%= row[:year] %></span>
+          <div class="bar-track">
+            <div class="bar-fill <%= 'projected' if row[:note] == 'projected' %>" style="width: <%= (row[:amount] / @max_amount.to_f * 100).round %>%"></div>
+          </div>
+          <span class="bar-value"><%= row[:amount] %> million tonnes <%= row[:note] %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <h2 class="section-title">The environmental link</h2>
+    <p>Making a new phone or laptop requires mining metals and minerals, which can mean clearing land, damaging ecosystems and using enormous amounts of energy and water. Every device we keep in use for longer, or recycle properly, reduces the need for new mining and manufacturing.</p>
+    <%= image_tag "deforestation.jpg", alt: "Aerial view of a forest cleared for mining, with bare orange earth next to dense green forest", class: "rounded shadow" %>
+    <p class="caption">Land cleared for resource extraction.</p>
+
+    <p class="center"><%= link_to "What can you do?", solutions_path, class: "btn btn-primary" %></p>
+  </div>
+</section>

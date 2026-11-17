@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= content_for?(:title) ? "#{yield(:title)} | E-Waste Awareness Campaign" : "E-Waste Awareness Campaign" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="See the truth. Understand the impact. Change tomorrow. Learn about electronic waste and what you can do about it.">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", media: "all" %>
+  </head>
+
+  <body>
+    <%= render "shared/nav" %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
+
+    <script>
+      var toggle = document.getElementById("nav-toggle");
+      var links = document.getElementById("nav-links");
+      if (toggle && links) {
+        toggle.addEventListener("click", function () {
+          var open = links.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<% content_for :title, "Home" %>
+
+<section class="hero" style="background-image: linear-gradient(rgba(35,84,33,.82), rgba(35,84,33,.88)), url('<%= image_path "circuit-board.jpg" %>');">
+  <div class="container hero-inner">
+    <p class="eyebrow">Electronic Waste Awareness Campaign</p>
+    <h1>See the truth.<br>Understand the impact.<br>Change tomorrow.</h1>
+    <p class="hero-sub">Protect our world, we only get one.</p>
+    <div class="btn-row">
+      <%= link_to "What is the issue?", issue_path, class: "btn btn-primary" %>
+      <%= link_to "What can you do?", solutions_path, class: "btn btn-light" %>
+      <%= instagram_link "Follow on Instagram" %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The numbers</h2>
+    <div class="stat-grid">
+      <% @stats.each do |stat| %>
+        <div class="stat-card">
+          <div class="stat-number"><%= stat[:number] %></div>
+          <p><%= stat[:label] %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container two-col">
+    <div>
+      <h2 class="section-title">What is e-waste?</h2>
+      <p class="lead"><strong>E-waste</strong> is any discarded electrical or electronic equipment.</p>
+      <ul class="checks">
+        <li>Anything from broken smartphones to washing machines and microwaves</li>
+        <li>The world's fastest-growing waste stream</li>
+      </ul>
+      <p>It spews toxic poisons into the air and soil and wastes billions of dollars in rare metals. Most of the world's e-waste is not recycled safely.</p>
+      <%= link_to "Read the full story", issue_path, class: "btn btn-primary" %>
+    </div>
+    <div>
+      <%= image_tag "ewaste-map.png", alt: "World map showing e-waste generated per person in 2022. Norway generates the most at 26.8 kg per person, and Burundi the least at 0.6 kg.", class: "rounded shadow" %>
+      <p class="caption">E-waste generated per person, 2022.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Three ways to start today</h2>
+    <div class="card-grid three">
+      <article class="card">
+        <h3>Keep it longer</h3>
+        <p>Skip the upgrade. Your current phone or laptop is often enough.</p>
+      </article>
+      <article class="card">
+        <h3>Repair it</h3>
+        <p>Fix broken devices at repair shops or community repair events.</p>
+      </article>
+      <article class="card">
+        <h3>Recycle it right</h3>
+        <p>Never bin electronics. Wipe your data and use an e-waste depot.</p>
+      </article>
+    </div>
+    <p class="center"><%= link_to "See all solutions", solutions_path, class: "btn btn-primary" %></p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container center">
+    <h2>Join the conversation</h2>
+    <p>Follow our Instagram for tips, facts and updates.</p>
+    <%= instagram_link %>
+  </div>
+</section>

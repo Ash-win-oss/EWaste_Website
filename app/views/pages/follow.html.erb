@@ -1,0 +1,29 @@
+<% content_for :title, "Follow Us" %>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Follow the campaign</h1>
+    <p>Stay up to date with tips, facts and ways to get involved.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <article class="social-card">
+      <div class="social-icon"><%= instagram_icon %></div>
+      <div>
+        <h2>Instagram</h2>
+        <p class="handle"><%= ApplicationHelper::INSTAGRAM_HANDLE %></p>
+        <p>Follow us for short e-waste facts, repair tips and campaign updates.</p>
+        <%= instagram_link "Open Instagram" %>
+      </div>
+    </article>
+
+    <h2 class="section-title">Help spread the word</h2>
+    <ul class="checks">
+      <li>Share the site with friends, family and classmates</li>
+      <li>Tag us on Instagram when you repair, reuse or recycle a device</li>
+      <li>Ask your favourite brands to make devices that last longer</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<% content_for :title, "Government Responsibilities" %>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Government responsibilities</h1>
+    <p>Individual choices matter, but the biggest changes come from laws and rules that make repair, reuse and recycling the easy option.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">What governments should do</h2>
+    <div class="card-grid three">
+      <% @responsibilities.each do |item| %>
+        <article class="card">
+          <h3><%= item[:title] %></h3>
+          <p><%= item[:body] %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Ongoing actions</h2>
+    <ul class="timeline">
+      <% @ongoing.each do |item| %>
+        <li>
+          <h3><%= item[:title] %></h3>
+          <p><%= item[:body] %></p>
+        </li>
+      <% end %>
+    </ul>
+    <p class="note">Laws change quickly. Check your local government's website for current e-waste and right-to-repair rules.</p>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>Electronic Waste Awareness Campaign</h3>
+      <p class="tagline">Protect our world, we only get one.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><%= link_to "The Issue", issue_path %></li>
+        <li><%= link_to "Solutions", solutions_path %></li>
+        <li><%= link_to "Government Responsibilities", government_path %></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Follow us</h4>
+      <p>
+        <%= link_to instagram_icon + content_tag(:span, ApplicationHelper::INSTAGRAM_HANDLE),
+                    ApplicationHelper::INSTAGRAM_URL, class: "footer-social",
+                    target: "_blank", rel: "noopener noreferrer" %>
+      </p>
+      <p><%= link_to "More ways to follow", follow_path %></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>&copy; <%= Time.current.year %> E-Waste Awareness Campaign. Figures are based on the UN Global E-waste Monitor.</small>
+  </div>
+</footer>

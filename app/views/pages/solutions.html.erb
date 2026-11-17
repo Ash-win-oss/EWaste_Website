@@ -1,0 +1,46 @@
+<% content_for :title, "Solutions" %>
+
+<section class="page-header">
+  <div class="container">
+    <h1>How to address e-waste</h1>
+    <p>Everyone has a part to play: You and your ffriends, businesses and governments.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Individuals</h2>
+    <div class="card-grid three">
+      <% @individual_actions.each_with_index do |action, i| %>
+        <article class="card">
+          <span class="card-num"><%= i + 1 %></span>
+          <h3><%= action[:title] %></h3>
+          <p><%= action[:body] %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Businesses</h2>
+    <p class="lead">Educating consumers and developers about the negative impacts of resource extraction and deforestation is essential for spreading awareness. By teaching people how their purchases can support or stand against environmental damage, we can encourage sustainable purchasing and incentivize businesses to make more responsible products.</p>
+    <div class="card-grid three">
+      <% @business_actions.each do |action| %>
+        <article class="card">
+          <h3><%= action[:title] %></h3>
+          <p><%= action[:body] %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container center">
+    <h2>Want to keep going?</h2>
+    <%= link_to "Government responsibilities", government_path, class: "btn btn-light" %>
+    <%= instagram_link %>
+  </div>
+</section>
